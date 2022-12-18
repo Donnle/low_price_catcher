@@ -1,0 +1,60 @@
+<div class="products-page">
+  <div class="products-page-wrapper">
+    <div class="products-page-flexbox">
+      <div class="products-page-flexbox__params params">
+        <div class="params-filters filters">
+          <label class="filters-category">
+            <span class="filters-category__title">Категорія:</span>
+            <select (ngModelChange)="onFilterByCategoryChange($event)"
+                    [ngModel]="filtersService.selectedCategory$.getValue().value"
+                    class="filters-category__select"
+                    name="category">
+              <option
+                *ngFor="let category of categories"
+                [value]="category.value"
+                class="filters-category__select-option"
+              >{{category.title}}</option>
+            </select>
+          </label>
+          <label class="filters-price">
+            <span class="filters-price__title">Ціна:</span>
+            <input (ngModelChange)="onMinPriceChange($event)"
+                   [ngModel]="minPrice"
+                   class="filters-price__from"
+                   id="price-min"
+                   placeholder="Від:"
+                   type="number"/>
+            <input (ngModelChange)="onMaxPriceChange($event)"
+                   [ngModel]="maxPrice"
+                   class="filters-price__to"
+                   id="price-max"
+                   placeholder="До:"
+                   type="number"/>
+          </label>
+        </div>
+        <div class="params-sort sort">
+          <label class="sort-label">
+            <span class="sort-label__title">Сортування по:</span>
+            <select (ngModelChange)="onSortByChange($event)"
+                    [ngModel]="productsService.sortBy$.getValue().value"
+                    class="sort-label__select"
+                    name="category">
+              <option
+                *ngFor="let sortOption of sortOptions"
+                [value]="sortOption.value"
+                class="sort-label__select-option"
+              >{{sortOption.title}}</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="products-page-flexbox__main main">
+        <span (click)="openPopup()" class="main-add-product">
+          <span class="main-add-product__title">+</span>
+        </span>
+        <app-products></app-products>
+      </div>
+    </div>
+  </div>
+</div>
+<app-add-product (closePopup)="closePopup()" *ngIf="isAddPopupOpen"></app-add-product>

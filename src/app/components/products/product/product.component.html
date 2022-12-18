@@ -1,0 +1,31 @@
+<div class="product">
+  <div class="product-flexbox">
+    <div class="product-image">
+      <img [src]="product.mainImage" alt="product" class="product-image__image">
+    </div>
+    <div class="product-info info">
+      <div class="info-text">
+        <a *ngIf="product.customName; else elseBlock" [href]="product.link" class="info-text__title">
+          {{product.customName}}
+          <span class="info-text__title-original">({{product.name}})</span>
+        </a>
+        <ng-template #elseBlock>
+          <a [href]="product.link" class="info-text__title">{{product.name}}</a>
+        </ng-template>
+        <span class="info-text__category">
+          <span class="info-text__category-text">{{product.category}}</span>
+        </span>
+        <p class="info-text__added-date">Додано: {{product.date | date:'HH:mm, dd.MM.YYYY'}}</p>
+      </div>
+      <div class="info-price">
+        <span *ngIf="product.oldPrice" class="info-price__old">{{product.oldPrice | number:'.2'}}</span>
+        <span [ngClass]="{
+        'red': product.oldPrice
+        }" class="info-price__current">{{product.currentPrice | number:'.2'}}</span>
+      </div>
+    </div>
+    <span (click)="removeProduct()" class="product-delete">
+      <span class="product-delete__button">Перестати слідкувати</span>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="add-product">
+  <div class="add-product-wrapper">
+    <div (click)="onClose()" class="close">
+      <img alt="close" class="close-image" src="./assets/icons/close.png">
+    </div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="add-product-form form">
+      <label class="form-custom-name">
+        <span class="form-custom-name__title">Назва товару:</span>
+        <br>
+        <input class="form-custom-name__input" formControlName="customName" type="text">
+      </label>
+      <br>
+      <label class="form-link">
+        <span class="form-link__title">Посилання:</span>
+        <br>
+        <input class="form-link__input" formControlName="link" type="text">
+      </label>
+      <button class="form-submit-button" type="submit">Додати продукт</button>
+    </form>
+  </div>
+</div>

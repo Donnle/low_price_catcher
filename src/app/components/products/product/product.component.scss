@@ -1,0 +1,134 @@
+a {
+  display: block;
+  text-decoration: none;
+}
+
+.product {
+  position: relative;
+  background-color: var(--light-gray-color);
+  margin: 10px 0;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &-flexbox {
+    display: flex;
+  }
+
+  &-image {
+    flex: 0 1 200px;
+    height: 200px;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    flex: 0 1 100%;
+    padding: 10px;
+  }
+
+  &-delete {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 7px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--light-green-color);
+    transition: all .25s;
+
+    &__button {
+      font-size: 1.6rem;
+      line-height: 1.2em;
+    }
+
+    &:hover {
+      background-color: var(--light-gray-color);
+      outline: 1px solid black;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+
+  &-text {
+    flex: 0 1 80%;
+
+    &__title {
+      font-size: 2.4rem;
+      line-height: 1.2em;
+      color: var(--dark-blue-color);
+      padding-bottom: 5px;
+      max-width: 1000px;
+
+      &-original {
+        font-size: 1.2rem;
+        line-height: 1.2em;
+        color: var(--dark-blue-color);
+      }
+    }
+
+    &__category {
+      display: inline-block;
+      background: var(--light-green-color);
+      border-radius: 5px;
+      padding: 3px 10px;
+
+      &-text {
+        font-size: 1.6rem;
+        line-height: 1.2em;
+      }
+    }
+
+    &__added-date {
+      font-size: 1.6rem;
+      line-height: 1.2em;
+      padding-top: 10px;
+    }
+  }
+
+  &-price {
+    text-align: right;
+    flex: 0 1 20%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+
+    &__old {
+      position: relative;
+      font-size: 2.4rem;
+      line-height: 1.2em;
+      color: var(--gray-price-color);
+      text-decoration: line-through;
+
+      &:after {
+        position: absolute;
+        content: '₴';
+        top: 0;
+        right: -20px;
+      }
+    }
+
+    &__current {
+      position: relative;
+      font-size: 2.8rem;
+      line-height: 1.2em;
+
+      &.red {
+        color: var(--red-color);
+      }
+
+      &:after {
+        position: absolute;
+        content: '₴';
+        top: 0;
+        right: -20px;
+      }
+    }
+  }
+}

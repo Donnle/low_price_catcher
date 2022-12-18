@@ -1,0 +1,43 @@
+<div class="home">
+  <div class="hero">
+    <div class="hero-wrapper">
+      <div class="hero-flexbox">
+        <div class="hero-text">
+          <div class="hero-text__suptitle">
+            <span>best way save your money</span>
+          </div>
+          <h1 class="hero-text__title">LOW<br>PRICE<br>CATCHER</h1>
+          <a class="hero-text__button" routerLink="/products">
+            <span class="hero-text__button-text">Start</span>
+          </a>
+        </div>
+        <div class="hero-image">
+          <img alt="men with saved money" class="hero-image__img" src="./assets/images/hero-image.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="platforms">
+    <div class="platforms-wrapper">
+      <div class="platforms-flexbox">
+        <ul class="platforms-flexbox__list">
+          <li *ngFor="let platform of platforms" [ngClass]="{
+          platform__left: platform.position === 'left',
+          platform__center: platform.position === 'center',
+          platform__right: platform.position === 'right'
+          }" class="platforms-flexbox__list-item platform">
+            <div class="platform-flexbox">
+              <a [href]="platform.link" class="platform-flexbox-image">
+                <img [src]="platform.image" alt="platform image" class="platform-flexbox__image-img">
+              </a>
+              <span *ngIf="platform.isComingSoon" class="platform-flexbox__coming-soon">
+                <span class="platform-flexbox__coming-soon-text">Скоро буде...</span>
+              </span>
+            </div>
+            <p class="platform-text">{{platform.text}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
