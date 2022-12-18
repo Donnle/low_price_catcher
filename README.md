@@ -1,27 +1,62 @@
 # LowPriceCatcher
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+## Запуск
 
-## Development server
+Для того щоб запустити цей сайт вам потрібно виконати кілька простих дій:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Встановити [NodeJS](https://nodejs.org/dist/v18.12.1/node-v18.12.1-x64.msi)
+2. Встановити [Git](https://git-scm.com/downloads)
+3. Зайти в папку в яку хочете завантажити репозиторій
+4. Відкрити консоль
+5. Завантажити репозиторій на ПК. Команда: `git clone https://github.com/Donnle/low_price_catcher.git`
+6. Зайти в папку \*your_dir\*/low_price_catcher
+7. Відкрити консоль
+8. Завантажити всі необхідні пакети. Команда: `npm install`
+9. Запустити сайт. Команда: `npm run start:proxy`
+10. !!! Не закривати консоль !!!
+11. Зайти в папку \*your_dir\*/low_price_catcher/api
+12. Відкрити консоль
+13. Завантажити всі необхідні пакети. Команда: `npm install`
+14. Запустити бекенд. Команда: `npm run start`
+15. !!! Не закривати консоль !!!
 
-## Code scaffolding
+Після чого переглянути сайт можна за посиланням http://localhost:4200
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Підтримуюючі сайти:
 
-## Build
+Зазвичай підтримуюючі сайти відображаютсья на головній сторінці
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![img.png](availableWebsites.png)
 
-## Running unit tests
+Зараз це:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- rozetka
 
-## Running end-to-end tests
+### Додавання товару для відслідковування
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Нажміть на кнопу "+"
 
-## Further help
+![img.png](add-product-1.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Введіть назву та посилання товару
+
+![img_2.png](add-product-2.png)
+
+3. Товар успішно додано!
+
+![img_3.png](add-product-3.png)
+
+Якщо товар був доданий раніше, то нічого не відбудеться.
+
+### Коли оновлюється ціна товару
+
+Ціна товару оновлюється при:
+
+- Перезагрузці сайту
+- Автоматично кожної години
+
+### Плани на майбутнє
+
+- Зробити сповіщення в telegram
+- Зробити авторизацію
+- Додати інші сайти
